@@ -1,0 +1,149 @@
+# Rime schema
+# encoding: utf-8
+
+schema:
+  schema_id: mix_flypy
+  name: 小鹤五笔
+  version: "0.1"
+  author:
+    - dwandw
+  description: |
+    小鹤双拼 + 五笔 + 中英夹杂 + 英文 + 日语
+  dependencies:
+    - melt_eng        # 英文词典
+    - wubi08          # 五笔词典
+    - japanese        # 日文词典
+    - flypy           # 拼音+小鹤双拼词典
+
+switches:
+  - name: ascii_mode
+    reset: 0
+    states: [ 中文, 英文 ]
+  - name: full_shape
+    states: [ 半角, 全角 ]
+  - name: ascii_punct
+    states: [ 。，, ．， ]
+  - name: traditional
+    reset: 0    # 0: 简 1: 繁
+    states: [ 简体, 繁体 ]
+  - name: emoji
+    reset: 1
+
+engine:
+  processors:
+    - ascii_composer
+    - recognizer
+    - key_binder
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - ascii_segmentor
+    - matcher
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - lua_translator@*translator_wubi               # 五笔单字母
+    - lua_translator@*translator_date               # 日期、时间、星期
+    - lua_translator@*translator_unicode            # Unicode输入 Ux Uo
+    - lua_translator@*translator_calculator         # 计算器 =
+    - lua_translator@*translator_number             # 数字、金额大写
+    - punct_translator
+    - script_translator
+    - reverse_lookup_translator
+    - table_translator@wubi08                       # 五笔输入
+    - table_translator@melt_eng                     # 英文输入
+    - table_translator@japanese                     # 日文输入
+  filters:
+    - simplifier@emoji                              # Emoji
+    - simplifier@tradition                          # 简体转繁体
+    - lua_filter@*filter_replace_for_opencc         # opencc替换为空格括号
+    - lua_filter@*filter_single_letter_pass         # 过滤单字母
+    - uniquifier
+
+speller:
+  alphabet: zyxwvutsrqponmlkjihgfedcba.-_
+  delimiter: "`"
+
+translator:
+  enable_sentence: false
+  enable_user_dict: false
+  always_show_comments: true
+  enable_completion: true
+  dictionary: pinyin_simp
+  prism: flypy_py_simp
+  initial_quality: 9          # 初始权重
+  comment_format:
+    - xform/~/~P /
+
+melt_eng:
+  enable_sentence: false   # 禁止造句
+  enable_user_dict: false  # 禁用用户词典
+  dictionary: melt_eng     # 挂载词库 melt_eng.dict.yaml
+  initial_quality: 8       # 初始权重
+  comment_format:          # 自定义提示码
+    # - xform/.*//           # 清空提示码
+    - xform/~/~E /
+
+wubi08:
+  enable_sentence: false
+  enable_user_dict: false
+  always_show_comments: true
+  enable_completion: false
+  dictionary: wubi08
+  initial_quality: 10
+  comment_format:
+    - xform/~/~W /
+
+japanese:
+  enable_sentence: false
+  enable_user_dict: false
+  always_show_comments: true
+  enable_completion: true
+  dictionary: japanese
+  initial_quality: 6
+  preedit_format:
+    - xlit|qx|-_|
+    - xform|ye|i_e|
+  comment_format:
+    - xlit|qx|-_|
+    - xform|ye|i_e|
+    - xform/~/~J /
+
+# Emoji
+emoji:
+  option_name: emoji
+  opencc_config: emoji.json
+  inherit_comment: false
+
+reverse_lookup:
+  dictionary: japanese
+  prefix: J
+  tips: "  【日语】"
+
+punctuator:
+  import_preset: default
+
+key_binder:
+  import_preset: default
+
+recognizer:
+  import_preset: default
+  patterns:
+    reverse_lookup: "^J[a-z.]*$"
+    unicode: "^U.*$"
+    expression: "^=.*$"
+    number: "^R[0-9]+[.]?[0-9]*"        # 脚本将自动获取第 2 个字符 R 作为触发前缀，响应 lua_translator@number_translator，数字金额大写
+
+tradition:
+  opencc_config: s2t.json  # 简 -> 繁
+  #  opencc_config: s2hk.json  # 繁 -> 香港
+  #  opencc_config: t2s.json   # 繁 -> 简
+  #  opencc_config: t2tw.json  # 繁 -> 台湾
+  #  opencc_config: t2hk.json  # 繁 -> 香港
+  #  opencc_config: s2tw.json  # 簡 -> 臺灣標準
+  #  opencc_config: s2twp.json  # 簡 -> 臺灣片語
+  option_name: traditional

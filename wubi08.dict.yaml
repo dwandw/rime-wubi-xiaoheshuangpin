@@ -1,0 +1,50 @@
+---
+name: wubi08
+version: "4.3"
+sort: by_weight # by_weight=权重 original=原始
+import_tables:
+  - base/base
+  - base/base_wubi                                     # 数字到五笔映射
+  - wubi08/CJK                                         # 新世纪五笔词库
+  - wubi08/CJK-A
+  - wubi08/CJK-B
+  - wubi08/CJK-C
+  - wubi08/CJK-D
+  - wubi08/CJK-E
+  - wubi08/CJK-F
+  - wubi08/CJK-G
+  - wubi08/CJK-H
+  - wubi08/CJK-I
+  # - wubi08/CJK-J # 都是没有编码的字
+  - wubi08/CJKCompatibilityIdeographs
+  - wubi08/CJKCompatibilityIdeographsSupplement
+  - wubi08/CJKRadicalsSupplement
+  - wubi08/CJKStrokes
+  - wubi08/CJKSymbolsandPunctuation
+  - wubi08/CountingRodNumerals
+  - wubi08/KangxiRadicals
+  - base/base_cn_en                                    # 中英夹杂词库
+  - base/base_common                                   # 基础词库
+  - base/base_extra                                    # 扩展词库
+  - base/base_extra_district                           # 扩展词库 - 行政区域
+  - base/base_personal.ignore                          # 个人词库
+  - opencc/emoji                                       # 基础emoji词库
+  - opencc/others                                      # 扩展emoji词库
+  - opencc/personal.ignore                             # 个人OpenCC词库
+
+columns:    # 码表格式
+  - text    # 文字
+  - code    # 输入码
+  - weight  # 权重
+  - stem
+encoder:
+  # exclude_patterns:
+  #   - '^z.*$'
+  rules:                        # 大写字母表示字序，小写字母表示其所跟随的大写字母所以表的字中的编码序
+    - length_equal: 2           # 对于二字词
+      formula: "AaAbBaBb"       # 取第一字首二码、第二字首二码
+    - length_equal: 3           # 对于三字词
+      formula: "AaBaCaCb"       # 取第一字首码、第二字首码、第三字首码、第三字二笔码
+    - length_in_range: [4, 20]  # 对于四至十字词
+      formula: "AaBaCaZa"       # 取第一字首码，第二字尾码、第三字首码、最后一字首码
+...

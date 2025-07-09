@@ -1,0 +1,16 @@
+---
+name: UnicodeCJK-WuBi06-CJK-CountingRodNumerals
+version: "0.1"
+sort: by_weight # by_weight=权重 original=原始
+columns:    # 码表格式
+  - unicode # 文字
+  - text    # 文字
+  - code    # 输入码
+  - weight  # 权重
+...
+
+U+1D372	𝍲	ggll
+U+1D373	𝍳	ghk
+U+1D374	𝍴	ghd
+U+1D375	𝍵	ghhk
+U+1D376	𝍶	ghd

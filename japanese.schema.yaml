@@ -1,0 +1,110 @@
+# Rime schema
+# vim: set sw=2 sts=2 et:
+# encoding: utf-8
+
+schema:
+  schema_id: japanese
+  name: 日语
+  version: 'v0.2'
+  author:
+    - ensigma96 <ensigma96@gmail.com>
+
+switches:
+  # - name: ascii_mode
+  #   reset: 0
+  #   states: [ 中文, 西文 ]
+  # - name: full_shape
+  #   states: [ 半角, 全角 ]
+  # - name: simplification
+  #   states: [ 漢字, 汉字 ]
+  #   reset: 0
+  #- options: [jp_variants, zh_simp, zh_tw ]
+  #- options: [zh_simp, zh_tw ]
+  #  reset: 0
+  #  states:
+  #    #- 字形 → 日本
+  #    - 字形 → 大陸
+  #    - 字形 → 台灣
+  # - name: ascii_punct
+  #   states: [ 。，, ．， ]
+
+engine:
+  processors:
+    - ascii_composer
+    - recognizer
+    - key_binder
+    - speller
+    - punctuator
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - ascii_segmentor
+    - matcher
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - punct_translator
+    - script_translator
+    - reverse_lookup_translator
+  filters:
+    - simplifier
+    #- simplifier@jp_variants
+    #- simplifier@zh_simp
+    #- simplifier@zh_tw
+    - uniquifier
+
+speller:
+  alphabet: 'zyxwvutsrqponmlkjihgfedcba-_'
+  delimiter: " '"
+  algebra:
+    - 'derive/_/x/'
+    - 'derive/-/q/'
+    # Add / remove rules the as you wish
+    - 'derive/i_e/ye/'
+    - xlit/ZYXWVUTSRQPONMLKJIHGFEDCBA/zyxwvutsrqponmlkjihgfedcba/
+    # - 'derive/fu/hu/'
+
+translator:
+  enable_user_dict: false
+  dictionary: japanese
+  spelling_hints: 5
+  comment_format:
+    - 'xlit|qx|-_|'
+  preedit_format:
+    - 'xlit|qx|-_|'
+
+# simplifier:
+#  option_name: jp_variants
+#  opencc_config: jp_t2s.json
+
+punctuator:
+  import_preset: default
+
+key_binder:
+  bindings:
+    # [] Pagination
+    - {accept: bracketleft, send: Page_Up , when: has_menu}
+    - {accept: bracketright, send: Page_Down , when: has_menu}
+
+#zh_jp:
+#  option_name: zh_jp
+#  opencc_config: jp_t2s.json
+#  #tips: all
+#  tips: none
+
+# zh_simp:
+#   option_name: zh_simp
+#   opencc_config: t2s.json
+#   tips: none
+
+# zh_tw:
+#   option_name: zh_tw
+#   opencc_config: t2tw.json
+#   tips: none
+
+# jp_variants:
+#   option_name: jp_variants
+#   opencc_config: jp_t2s.json
+#   tips: none

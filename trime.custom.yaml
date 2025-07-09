@@ -1,0 +1,278 @@
+# trime.custom.yaml
+# encoding: utf-8
+
+patch:
+  "style/horizontal": false
+  # "style/label_text_size": 10
+  "style/candidate_text_size": 26
+  "style/candidate_view_height": 40
+#  "style/candidate_padding": 50 #候選項內邊距
+#  "style/candidate_spacing": 2 #候選間距
+  "style/layout/max_width": 300
+  # "style/layout/margin_x": 5
+  # "style/layout/margin_y": 5
+  # "style/layout/border": 20
+  # "style/layout/round_corner": 20
+  "style/layout/alpha": 0xff
+  # "style/layout/line_spacing": 30
+  "style/layout/line_spacing_multiplier": 1.0
+  "style/keyboard_height_land": 300
+  # "style/latin_font": "MonaspaceKrypton-Light.otf"             #西文字型
+  "style/latin_font": "Alegreya-VariableFont_wght.ttf"         #西文字型
+  "style/text_font": "YaHei.Consolas.1.12.ttf"                 #編碼字型
+  "style/label_font": "MonaspaceKrypton-Light.otf"             #編標籤字型
+  "style/candidate_font": "LXGWWenKai-Regular.ttf"             #候選字型
+  "style/comment_font": "YaHei.Consolas.1.12.ttf"              #編碼提示字型
+  "style/key_font": "YaHei.Consolas.1.12.ttf"                  #鍵盤字型
+  "style/symbol_font": "YaHei.Consolas.1.12.ttf"               #符號字型
+  "style/preview_font": "LXGWWenKai-Regular.ttf"               #按鍵提示字型
+  "style/long_text_font": "LXGWWenKai-Regular.ttf"             #剪贴板等可能包含大段文本使用的字体
+  # "style/hanb_font": "HTYuanXiB-Regular.ttf"                 #擴充字型
+  "style/hanb_font":                                           #擴充字型
+   - "PlangothicP1-Regular.otf"
+   - "PlangothicP2-Regular.otf"
+  "style/locale": "zh_CN"
+  # "style/comment_on_top": false
+  "style/speech_opencc_config": t2s.json #語音輸入簡繁轉換
+  preset_keys/+:
+    Tab: {label: ⇥, send: Tab}
+  "preset_keys/BackSpace/label": 🔙🔙 #空格
+  "preset_keys/select_all/label": 全选
+  "preset_keys/VOICE_ASSIST/label": 语音
+  "preset_keys/Hide/label": 隐藏
+  "preset_keys/Delete/label": 删除
+  "preset_keys/copy/label": 复制
+  "preset_keys/cut/label": 剪切
+  "preset_keys/paste/label": 粘贴
+  "preset_keys/undo/label": 撤销
+  "preset_keys/Page_Up/label": 上页
+  "preset_keys/Page_Down/label": 下页
+  "preset_keys/Keyboard_number/label": 数字
+  "preset_keys/Keyboard_symbols/label": 符号
+  "preset_keys/Keyboard_switch/label": 键盘
+  "preset_keys/Theme_settings/label": 主题
+  "preset_keyboards/mix_flypy/import_preset": us_intl
+  "preset_keyboards/us_intl/ascii_mode": 0
+  "preset_keyboards/us_intl/keys":
+    - {click: '1', long_click: '!'}
+    - {click: '2', long_click: '@'}
+    - {click: '3', long_click: '#'}
+    - {click: '4', long_click: '$'}
+    - {click: '5', long_click: '%'}
+    - {click: '6', long_click: '^'}
+    - {click: '7', long_click: '&'}
+    - {click: '8', long_click: '*'}
+    - {click: '9', long_click: '(){Left}'}
+    - {click: '0', long_click: '-'}
+    - {click: 'q', hint: '我', long_click: '~'}
+    - {click: 'w', hint: '人', long_click: '+'}
+    - {click: 'e', hint: '有', long_click: '='}
+    - {click: 'r', hint: '的', long_click: '×'}
+    - {click: 't', hint: '和', long_click: '÷'}
+    - {click: 'y', hint: '主', long_click: '«»{Left}'}
+    - {click: 'u', hint: '产', long_click: '[]{Left}'}
+    - {click: 'i', hint: '不', long_click: '{}{Left}'}
+    - {click: 'o', hint: '为', long_click: '\'}
+    - {click: 'p', hint: '这', long_click: '|'}
+    - {click: 'a', hint: '工', long_click: '`'}
+    - {click: 's', hint: '要', long_click: Page_Up}
+    - {click: 'd', hint: '在', long_click: Page_Down}
+    - {click: 'f', hint: '地', long_click: Left}
+    - {click: 'g', hint: '一', long_click: Up}
+    - {click: 'h', hint: '上', long_click: Down}
+    - {click: 'j', hint: '是', long_click: Right}
+    - {click: 'k', hint: '中', long_click: Home}
+    - {click: 'l', hint: '国', long_click: End}
+    - {click: '/', long_click: '?'}
+    - {click: Shift_L, long_click: Color_switch}
+    - {click: 'z', long_click: select_all}
+    - {click: 'x', hint: '经', long_click: cut}
+    - {click: 'c', hint: '以', long_click: copy}
+    - {click: 'v', hint: '发', long_click: paste}
+    - {click: 'b', hint: '了', long_click: Insert}
+    - {click: 'n', hint: '民', long_click: undo}
+    - {click: 'm', hint: '同', long_click: redo}
+    - {click: ',', long_click: '<'}
+    - {click: '.', long_click: '>'}
+    - {click: Keyboard_symbols, long_click: Keyboard_number, width: 15}
+    - {click: Tab}
+    - {click: ';', long_click: ':'}
+    - {click: "'", long_click: '"'}
+    - {click: space, width: 25}
+    - {click: BackSpace, swipe_right: Delete, swipe_left: Escape, width: 15}
+    - {click: Return, width: 15}
+  "preset_keyboards/qwerty/ascii_mode": 0
+#  "preset_keyboards/qwerty/keys":
+#    - {click: 'q', hint: '我', long_click: '!', swipe_up: 1}
+#    - {click: 'w', hint: '人', long_click: '@', swipe_up: 2}
+#    - {click: 'e', hint: '有', long_click: '#', swipe_up: 3}
+#    - {click: 'r', hint: '的', long_click: '$', swipe_up: 4}
+#    - {click: 't', hint: '和', long_click: '%', swipe_up: 5}
+#    - {click: 'y', hint: '主', long_click: '^', swipe_up: 6}
+#    - {click: 'u', hint: '产', long_click: '&', swipe_up: 7}
+#    - {click: 'i', hint: '不', long_click: '*', swipe_up: 8}
+#    - {click: 'o', hint: '为', long_click: '(){Left}', swipe_up: 9}
+#    - {click: 'p', hint: '这', long_click: 'Hide', swipe_up: 0}
+#    - {width: 5}
+#    - {click: 'a', hint: '工', long_click: select_all, swipe_left: Left, swipe_right: Right, swipe_up: Up, swipe_down: Down}
+#    - {click: 's', hint: '要', long_click: '~', swipe_left: Home, swipe_right: End,swipe_up: Home, swipe_down: End}
+#    - {click: 'd', hint: '在', long_click: '-', swipe_down: '_'}
+#    - {click: 'f', hint: '地', long_click: '+', swipe_down: '='}
+#    - {click: 'g', hint: '一', long_click: '\', swipe_down: '|'}
+#    - {click: 'h', hint: '上', long_click: '[]{Left}', swipe_left: '[', swipe_right: ']'}
+#    - {click: 'j', hint: '是', long_click: '{}{Left}', swipe_left: '{', swipe_right: '}'}
+#    - {click: 'k', hint: '中', long_click: ':', swipe_up: Left, swipe_down: Right}
+#    - {click: 'l', hint: '国', long_click: ';'}
+#    - {width: 5}
+#    - {click: Shift_L, send_bindings: false, width: 15}
+#    - {click: 'z', long_click: '`'}
+#    - {click: 'x', hint: '经', long_click: cut}
+#    - {click: 'c', hint: '以', long_click: copy}
+#    - {click: 'v', hint: '发', long_click: paste}
+#    - {click: 'b', hint: '了', long_click: Time, swipe_up: Date}
+#    - {click: 'n', hint: '民', long_click: '"'}
+#    - {click: 'm', hint: '同', long_click: "'"}
+#    - {click: BackSpace, swipe_left: Escape, width: 15}
+#    - {click: Mode_switch, long_click: Menu, width: 15}
+#    - {click: Keyboard_symbols, long_click: Keyboard_number}
+#    - {click: ',', long_click: '<'}
+#    - {click: space, width: 30}
+#    - {click: '.', long_click: '>'}
+#    - {click: '/', long_click: '?'}
+#    - {click: Return, composing: Return1, long_click: CommitComment, width: 15}
+  # "preset_color_schemes/default/hilited_candidate_text_color": 0x23948e            # 0x000000
+  # "preset_color_schemes/default/hilited_candidate_back_color": 0x00000000          # 0xd3d7da
+  # "preset_color_schemes/default/hilited_comment_text_color": 0xd3d7da              # 0x000000
+  # "preset_color_schemes/default/hilited_back_color": 0x00000000                    # 0xccd3d7da
+  # "preset_color_schemes/default/text_back_color": 0xe4e7e9                         # 0xcce4e7e9
+  # "preset_color_schemes/aqua/hilited_candidate_back_color": 0x00000000             # 0x0a3afa
+  # "preset_color_schemes/aqua/hilited_candidate_text_color": 0x0a3afa               # 0xffffff
+  # "preset_color_schemes/aqua/hilited_back_color": 0x00000000                       # 0xd4d4d4
+  # "preset_color_schemes/aqua/hilited_text_color": 0x0a3afa                         # 0x000000
+  # "preset_color_schemes/azure/hilited_candidate_back_color": 0x00000000            # 0x015ea9
+  # "preset_color_schemes/luna/hilited_candidate_back_color": 0x00000000             # 0x000000
+  # "preset_color_schemes/luna/hilited_candidate_text_color": 0xffff7f               # 0xffffff
+  # "preset_color_schemes/luna/hilited_back_color": 0x00000000                       # 0xffff7f
+  # "preset_color_schemes/ink/hilited_back_color": 0x00000000                        # 0xdddddd
+  # "preset_color_schemes/ink/hilited_candidate_back_color": 0x00000000              # 0x000000
+  # "preset_color_schemes/ink/hilited_candidate_text_color": 0xdddddd                # 0xffff7f
+  # "preset_color_schemes/lost_temple/hilited_back_color": 0x00000000                # 0x222222
+  # "preset_color_schemes/lost_temple/hilited_candidate_back_color": 0x00000000      # 0xcae682
+  # "preset_color_schemes/lost_temple/hilited_candidate_text_color": 0xcae682        # 0xffff7f
+  # "preset_color_schemes/dark_temple/hilited_candidate_back_color": 0x00000000      # 0xcae682
+  # "preset_color_schemes/google/hilited_candidate_back_color": 0x00000000           # 0xFFFFFF
+  # "preset_color_schemes/google/hilited_candidate_text_color": 0x3975CE             # 0xcae682
+  # "preset_color_schemes/solarized_rock/hilited_candidate_back_color": 0x00000000   # 0xd33682
+  # "preset_color_schemes/solarized_rock/hilited_candidate_text_color": 0xd33682     # 0xffffff
+  # "preset_color_schemes/tintin/hilited_candidate_back_color": 0x00000000           # 0xf16421
+  # "preset_color_schemes/tintin/hilited_candidate_text_color": 0xf16421             # 0xffffff
+  # "preset_color_schemes/dota_2/hilited_candidate_back_color": 0x00000000           # 0xdd4118
+  # "preset_color_schemes/dota_2/hilited_candidate_text_color": 0xdd4118             # 0xffffff
+  # "preset_color_schemes/brasil/hilited_candidate_text_color": 0xf7c716             # 0xffffff
+  # "preset_color_schemes/brasil/hilited_candidate_back_color": 0x00000000           # 0xf7c716
+  # "preset_color_schemes/brasil/hilited_comment_text_color": 0x17367d               # 0xffffff
+  # "preset_color_schemes/brasil/hilited_back_color": 0x00000000                     # 0x17367d
+  # "preset_color_schemes/doraemon/hilited_back_color": 0x00000000                   # 0xe50012
+  # "preset_color_schemes/doraemon/hilited_text_color": 0xe50012                     # 0xffffff
+  # "preset_color_schemes/doraemon/hilited_candidate_back_color": 0x00000000         # 0x009fe8
+  # "preset_color_schemes/doraemon/hilited_candidate_text_color": 0xe50012           # 0xffffff
+  # "preset_color_schemes/espagna/hilited_back_color": 0x00000000                    # 0xf7b52c
+  # "preset_color_schemes/espagna/hilited_text_color": 0xf7b52c                      # 0xffffff
+  # "preset_color_schemes/espagna/hilited_candidate_back_color": 0x00000000          # 0xf7b52c
+  # "preset_color_schemes/espagna/hilited_candidate_text_color": 0xf7b52c            # 0xffffff
+  # "preset_color_schemes/gholabok/hilited_candidate_back_color": 0x00000000         # 0xed6d3d
+  # "preset_color_schemes/gholabok/hilited_candidate_text_color": 0x007b43           # 0xffffff
+  # "preset_color_schemes/gholabok/hilited_back_color": 0x00000000                   # 0x007b43
+  # "preset_color_schemes/gholabok/hilited_text_color": 0xed6d3d                     # 0xffffff
+  # "preset_color_schemes/kuma_shuzboz/hilited_text_color": 0x000000                 # 0xf8b62d
+  # "preset_color_schemes/kuma_shuzboz/hilited_back_color": 0x00000000               # 0xffffff
+  # "preset_color_schemes/kuma_shuzboz/hilited_candidate_text_color": 0x000000       # 0xffffff
+  # "preset_color_schemes/kuma_shuzboz/hilited_candidate_back_color": 0x00000000     # 0x000000
+  # "preset_color_schemes/kuon/hilited_back_color": 0x00000000                       # 0xffffff
+  # "preset_color_schemes/kuon/hilited_text_color": 0x000000                         # 0x3eb370
+  # "preset_color_schemes/kuon/hilited_candidate_back_color": 0x00000000             # 0xffffff
+  # "preset_color_schemes/kuon/hilited_candidate_text_color": 0x000000               # 0x3eb370
+  # "preset_color_schemes/macau/hilited_candidate_back_color": 0x00000000            # 0xffffff
+  # "preset_color_schemes/macau/hilited_back_color": 0x00000000                      # 0xffd900
+  # "preset_color_schemes/macau/hilited_text_color": 0xffd900                        # 0xffffff
+  # "preset_color_schemes/nba/hilited_back_color": 0x00000000                        # 0xffffff
+  # "preset_color_schemes/nba/hilited_candidate_back_color": 0x00000000              # 0xd71e54
+  # "preset_color_schemes/nba/hilited_candidate_text_color": 0xd71e54                # 0xffffff
+  # "preset_color_schemes/ps4/hilited_text_color": 0x595757                          # 0xffffff
+  # "preset_color_schemes/ps4/hilited_back_color": 0x00000000                        # 0x595757
+  # "preset_color_schemes/ps4/hilited_candidate_text_color": 0x009fe8                # 0xffffff
+  # "preset_color_schemes/ps4/hilited_candidate_back_color": 0x00000000              # 0x009fe8
+  # "preset_color_schemes/skype/hilited_text_color": 0x000000                        # 0x00adef
+  # "preset_color_schemes/skype/hilited_back_color": 0x00000000                      # 0xffffff
+  # "preset_color_schemes/skype/hilited_candidate_text_color": 0x000000              # 0x00adef
+  # "preset_color_schemes/skype/hilited_candidate_back_color": 0x00000000            # 0xffffff
+  # "preset_color_schemes/xbox_silver/hilited_back_color": 0x00000000                # 0xb5f05b
+  # "preset_color_schemes/xbox_silver/hilited_text_color": 0x288c44                  # 0xffffff
+  # "preset_color_schemes/xbox_silver/hilited_candidate_back_color": 0x00000000      # 0x288c44
+  # "preset_color_schemes/xbox_silver/hilited_candidate_text_color": 0x288c44        # 0xffffff
+  # "preset_color_schemes/youtube/hilited_back_color": 0x00000000                    # 0xffffff
+  # "preset_color_schemes/youtube/hilited_candidate_back_color": 0x00000000          # 0xc30d23
+  # "preset_color_schemes/youtube/hilited_candidate_text_color": 0xc30d23            # 0xffffff
+  # "preset_color_schemes/so_young/hilited_back_color": 0x00000000                   # 0xffffff
+  # "preset_color_schemes/so_young/hilited_candidate_back_color": 0x00000000         # 0xc30d23
+  # "preset_color_schemes/so_young/hilited_candidate_text_color": 0xc30d23           # 0xffffff
+  # "preset_color_schemes/smurfs/hilited_candidate_back_color": 0x00000000           # 0x6dbcdb
+  # "preset_color_schemes/smurfs/hilited_candidate_text_color": 0x6dbcdb             # 0xf6f6f6
+  # "preset_color_schemes/wii/hilited_candidate_back_color": 0x00000000              # 0x33ccff
+  # "preset_color_schemes/wii/hilited_candidate_text_color": 0x33ccff                # 0xffffff
+  # "preset_color_schemes/android/hilited_candidate_back_color": 0x00000000          # 0xa8c450
+  # "preset_color_schemes/android/hilited_candidate_text_color": 0xa8c450            # 0xffffff
+  # "preset_color_schemes/cool_breeze/hilited_candidate_back_color": 0x00000000      # 0xACD6FF
+  # "preset_color_schemes/cool_breeze/hilited_candidate_text_color": 0xACD6FF        # 0x3A006F
+  # "preset_color_schemes/google_plus/hilited_candidate_back_color": 0x00000000      # 0xdd4b39
+  # "preset_color_schemes/google_plus/hilited_candidate_text_color": 0x000000        # 0xffffff
+  # "preset_color_schemes/modern_warfare/hilited_candidate_back_color": 0x00000000   # 0x636f67
+  # "preset_color_schemes/modern_warfare/hilited_candidate_text_color": 0x636f67     # 0xdcfeab
+  # "preset_color_schemes/starcraft_ii/hilited_candidate_back_color": 0x00000000     # 0x1eadef
+  # "preset_color_schemes/starcraft_ii/hilited_candidate_text_color": 0x1eadef       # 0xffffff
+  # "preset_color_schemes/steam/hilited_candidate_back_color": 0x00000000            # 0x314259
+  # "preset_color_schemes/steam/hilited_candidate_text_color": 0x314259              # 0xffffff
+  # "preset_color_schemes/tantsing/hilited_candidate_back_color": 0x00000000         # 0x730b6f
+  # "preset_color_schemes/tantsing/hilited_candidate_text_color": 0x730b6f           # 0xe3e3e3
+  # "preset_color_schemes/tantsing/hilited_back_color": 0x00000000                   # 0x91071a
+  # "preset_color_schemes/tantsing/hilited_text_color": 0x91071a                     # 0xe3e3e3
+  # "preset_color_schemes/yygc/hilited_candidate_text_color": 0xcc0000               # 0x7f7f7f
+  "preset_color_schemes/android/name": "【light】安卓／Android"
+  "preset_color_schemes/aqua/name": "【light】碧水／Aqua"
+  "preset_color_schemes/azure/name": "【light】青天／Azure"
+  "preset_color_schemes/brasil/name": "【light】巴西／Brasil"
+  "preset_color_schemes/brisk/name": "【light】轻盈／Brisk"
+  "preset_color_schemes/cool_breeze/name": "【light】清风／Cool Breeze"
+  "preset_color_schemes/dark_temple/name": "【dark】暗堂／Dark Temple"
+  "preset_color_schemes/default/name": "【light】默认／default"
+  "preset_color_schemes/doraemon/name": "【light】哆啦A梦／Doraemon"
+  "preset_color_schemes/dota_2/name": "【dark】DOTA 2"
+  "preset_color_schemes/espagna/name": "【light】西班牙／España"
+  "preset_color_schemes/flypy/name": "【light】小鶴飛揚／flypy"
+  "preset_color_schemes/gholabok/name": "【light】胡蘿菔／Gholabok"
+  "preset_color_schemes/google_plus/name": "【light】Google+"
+  "preset_color_schemes/google/name": "【light】Google"
+  "preset_color_schemes/ink/name": "【light】墨池／Ink"
+  "preset_color_schemes/kuma_shuzboz/name": "【light】熊出没"
+  "preset_color_schemes/kuon/name": "【light】琨／Kuon"
+  "preset_color_schemes/lost_temple/name": "【dark】孤寺／Lost Temple"
+  "preset_color_schemes/luna/name": "【light】明月／Luna"
+  "preset_color_schemes/macau/name": "【light】澳門／Macau"
+  "preset_color_schemes/macau/dark_scheme": "dark_temple"
+  "preset_color_schemes/modern_warfare/name": "【dark】現代戰爭"
+  "preset_color_schemes/nba/name": "【light】NBA"
+  "preset_color_schemes/ps4/name": "【dark】PS4"
+  "preset_color_schemes/skype/name": "【light】Skype"
+  "preset_color_schemes/smurfs/name": "【light】藍精靈／Smurfs"
+  "preset_color_schemes/so_young/name": "【light】致青春／So Young"
+  "preset_color_schemes/so_young/dark_scheme": "starcraft"
+  "preset_color_schemes/solarized_rock/name": "【dark】Solarized Rock"
+  "preset_color_schemes/starcraft_ii/name": "【dark】星際爭霸Ⅱ"
+  "preset_color_schemes/starcraft/name": "【dark】星際我爭霸"
+  "preset_color_schemes/steam/name": "【dark】Steam"
+  "preset_color_schemes/tantsing/name": "【light】丹青"
+  "preset_color_schemes/tintin/name": "【light】丁丁／ Tintin"
+  "preset_color_schemes/wii/name": "【light】Wii"
+  "preset_color_schemes/xbox_silver/name": "【light】Xbox Silver"
+  "preset_color_schemes/youtube/name": "【light】YouTube"
+  "preset_color_schemes/yygc/name": "【light】一葉孤城"

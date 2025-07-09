@@ -1,0 +1,84 @@
+schema:
+  schema_id: flypy
+  name:
+  version: "2023-10-17"
+  dependencies:
+    - pinyin_simp
+
+switches:
+  - name: ascii_mode
+    reset: 0
+    states: [ASCII-OFF, ASCII-ON]
+
+engine:
+  processors:
+    - ascii_composer
+    - key_binder
+    - speller
+    - recognizer
+    #關閉標點符號轉換（對應symbols.yaml）    - punctuator
+    - selector
+    - navigator
+    - express_editor
+  segmentors:
+    - matcher
+    - ascii_segmentor
+    - abc_segmentor
+    - punct_segmentor
+    - fallback_segmentor
+  translators:
+    - table_translator
+    - script_translator
+    - punct_translator
+  filters:
+    - uniquifier
+
+speller:
+  alphabet: zyxwvutsrqponmlkjihgfedcba
+  delimiter: " '"
+  algebra:
+    - erase/^xx$/
+    - derive/^([jqxy])u$/$1v/
+    - derive/^([aoe])([ioun])$/$1$1$2/
+    - derive/^([aoe])(ng)?$/$1$1$2/
+    - derive/iu$/Ⓠ/
+    - derive/(.)ei$/$1Ⓦ/
+    - derive/uan$/Ⓡ/
+    - derive/[uv]e$/Ⓣ/
+    - derive/un$/Ⓨ/
+    - derive/^sh/Ⓤ/
+    - derive/^ch/Ⓘ/
+    - derive/uo$/Ⓞ/
+    - derive/ie$/Ⓟ/
+    - derive/i?ong$/Ⓢ/
+    - derive/(.)ai$/$1Ⓓ/
+    - derive/(.)en$/$1Ⓕ/
+    - derive/(.)eng$/$1Ⓖ/
+    - derive/(.)ang$/$1Ⓗ/
+    - derive/(.)an$/$1Ⓙ/
+    - derive/ing$|uai$/Ⓚ/
+    - derive/[iu]ang$/Ⓛ/
+    - derive/(.)ou$/$1Ⓩ/
+    - derive/[iu]a$/Ⓧ/
+    - derive/(.)ao$/$1Ⓒ/
+    - derive/^zh/Ⓥ/
+    - derive/ui$/Ⓥ/
+    - derive/in$/Ⓑ/
+    - derive/iao$/Ⓝ/
+    - derive/ian$/Ⓜ/
+    - xlit/ⓆⓌⓇⓉⓎⓊⒾⓄⓅⓈⒹⒻⒼⒽⒿⓀⓁⓏⓍⒸⓋⒷⓃⓂ/qwrtyuiopsdfghjklzxcvbnm/
+
+translator:
+  enable_sentence: false
+  enable_user_dict: false
+  dictionary: pinyin_simp
+  prism: flypy_py_simp
+
+key_binder:
+  import_preset: default
+
+punctuator:
+  import_preset: default
+
+recognizer:
+  import_preset: default

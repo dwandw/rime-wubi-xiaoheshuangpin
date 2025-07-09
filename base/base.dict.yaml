@@ -1,0 +1,78 @@
+# Rime dictionary
+# encoding: utf-8
+
+---
+name: base
+version: "2024-11-30"
+
+...
+
+# 按需启用：
+
+# 大写字母
+# 可在拼音方案下直接输入大写字母（Shift + 字母），大写字母参与造句。
+# 示例：输入 `nihaoASDFzaijian` 得到 `你好ASDF再见`
+# （非雾凇方案的双拼如果要启用，需要参考双拼方案下的 speller/algebra 将大写字母搭桥改成一些特殊字符）
+A	a
+B	b
+C	c
+D	d
+E	e
+F	f
+G	g
+H	h
+I	i
+J	j
+K	k
+L	l
+M	m
+N	n
+O	o
+P	p
+Q	q
+R	r
+S	s
+T	t
+U	u
+V	v
+W	w
+X	x
+Y	y
+Z	z
+
+a	a
+b	b
+c	c
+d	d
+e	e
+f	f
+g	g
+h	h
+i	i
+j	j
+k	k
+l	l
+m	m
+n	n
+o	o
+p	p
+q	q
+r	r
+s	s
+t	t
+u	u
+v	v
+w	w
+x	x
+y	y
+z	z
+
+.	.
+。	.
+·	.
+（	.
+）	.
+，	.
+
+-	·
+–	·
