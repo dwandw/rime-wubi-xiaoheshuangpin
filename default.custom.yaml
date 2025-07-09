@@ -1,0 +1,15 @@
+# default.custom.yaml
+# save it to:
+#   ~/.config/ibus/rime  (linux)
+#   ~/Library/Rime       (macos)
+#   %APPDATA%\Rime       (windows)
+
+patch:
+  schema_list:
+    # - schema: mix_flypy            # 小鹤双拼
+    - schema: mix_wubi              # 五笔
+
+  "switcher/caption": "【 设置 】"
+
+  menu:
+    page_size: 9                    # 候选词数量，最多支持 10 个

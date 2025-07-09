@@ -1,0 +1,12 @@
+---
+name: UnicodeCJK-WuBi06-CJK-CJKSymbolsandPunctuation
+version: "0.1"
+sort: by_weight # by_weight=权重 original=原始
+columns:    # 码表格式
+  - unicode # 文字
+  - text    # 文字
+  - code    # 输入码
+  - weight  # 权重
+...
+
+U+3007	〇	llll

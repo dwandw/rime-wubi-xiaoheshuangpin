@@ -1,0 +1,36 @@
+# Rime schema
+# encoding: utf-8
+
+schema:
+  schema_id: pinyin_simp
+  name: '简体拼音'
+  version: "0.8"
+  author:
+    - 佚名
+  description: |
+    源自 Android 拼音
+
+speller:
+  alphabet: zyxwvutsrqponmlkjihgfedcba
+  algebra:
+    - abbrev/^([a-z]).+$/$1/
+    - abbrev/^([zcs]h).+$/$1/
+    - derive/^([nl])ue$/$1ve/
+    - derive/^([jqxy])u/$1v/
+    - derive/un$/uen/
+    - derive/ui$/uei/
+    - derive/iu$/iou/
+    - derive/([aeiou])ng$/$1gn/
+    - derive/([dtngkhrzcs])o(u|ng)$/$1o/
+    - derive/ong$/on/
+    - derive/ao$/oa/
+    - derive/([iu])a(o|ng?)$/a$1$2/
+    - xform/[@]//
+
+translator:
+  enable_user_dict: false
+  dictionary: pinyin_simp
+  preedit_format:
+    - xform/([nl])v/$1ü/
+    - xform/([nl])ue/$1üe/
+    - xform/([jqxy])v/$1u/

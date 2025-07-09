@@ -1,0 +1,83 @@
+# tongwenfeng.custom.yaml
+# encoding: utf-8
+
+patch:
+  # "style/latin_font": "MonaspaceKrypton-Light.otf"             #西文字型
+  "style/latin_font": "Alegreya-VariableFont_wght.ttf"         #西文字型
+  "style/text_font": "YaHei.Consolas.1.12.ttf"                 #編碼字型
+  "style/label_font": "MonaspaceKrypton-Light.otf"             #編標籤字型
+  "style/candidate_font": "LXGWWenKai-Regular.ttf"             #候選字型
+  "style/comment_font": "YaHei.Consolas.1.12.ttf"              #編碼提示字型
+  "style/key_font": "YaHei.Consolas.1.12.ttf"                  #鍵盤字型
+  "style/symbol_font": "YaHei.Consolas.1.12.ttf"               #符號字型
+  "style/preview_font": "LXGWWenKai-Regular.ttf"               #按鍵提示字型
+  "style/long_text_font": "LXGWWenKai-Regular.ttf"             #剪贴板等可能包含大段文本使用的字体
+  # "style/hanb_font": "HTYuanXiB-Regular.ttf"                 #擴充字型
+  "style/hanb_font":                                           #擴充字型
+   - "PlangothicP1-Regular.otf"
+   - "PlangothicP2-Regular.otf"
+  preset_keys/+:
+    Tab: {label: ⇥, send: Tab}
+  "preset_keys/BackSpace/label": 🔙🔙 #空格
+  "preset_keys/select_all/label": 全选
+  "preset_keys/VOICE_ASSIST/label": 语音
+  "preset_keys/Hide/label": 隐藏
+  "preset_keys/Delete/label": 删除
+  "preset_keys/copy/label": 复制
+  "preset_keys/cut/label": 剪切
+  "preset_keys/paste/label": 粘贴
+  "preset_keys/undo/label": 撤销
+  "preset_keys/Page_Up/label": 上页
+  "preset_keys/Page_Down/label": 下页
+  "preset_keys/Keyboard_number/label": 数字
+  "preset_keys/Keyboard_symbols/label": 符号
+  "preset_keys/Keyboard_switch/label": 键盘
+  "preset_keys/Theme_settings/label": 主题
+  "preset_color_schemes/android/name": "【light】安卓／Android"
+  "preset_color_schemes/aqua/name": "【light】碧水／Aqua"
+  "preset_color_schemes/azure/name": "【dark】青天／Azure"
+  "preset_color_schemes/brasil/name": "【dark】巴西／Brasil"
+  "preset_color_schemes/brisk/name": "【light】轻盈／Brisk"
+  "preset_color_schemes/cool_breeze/name": "【light】清风／Cool Breeze"
+  "preset_color_schemes/dark_temple/name": "【dark】暗堂／Dark Temple"
+  "preset_color_schemes/default/name": "【light】默认／default"
+  "preset_color_schemes/doraemon/name": "【light】哆啦A梦／Doraemon"
+  "preset_color_schemes/dota_2/name": "【dark】DOTA 2"
+  "preset_color_schemes/espagna/name": "【dark】西班牙／España"
+  "preset_color_schemes/flypy/name": "【light】小鹤飞扬／flypy"
+  "preset_color_schemes/gholabok/name": "【dark】胡萝菔／Gholabok"
+  "preset_color_schemes/google_plus/name": "【light】Google+"
+  "preset_color_schemes/google/name": "【light】Google"
+  "preset_color_schemes/ink/name": "【light】墨池／Ink"
+  "preset_color_schemes/kuma_shuzboz/name": "【dark】熊出没"
+  "preset_color_schemes/kuon/name": "【dark】琨／Kuon"
+  "preset_color_schemes/lost_temple/name": "【dark】孤寺／Lost Temple"
+  "preset_color_schemes/luna/name": "【light】明月／Luna"
+  "preset_color_schemes/macau/name": "【dark】澳门／Macau"
+  "preset_color_schemes/macau/dark_scheme": "dark_temple"
+  "preset_color_schemes/modern_warfare/name": "【dark】现代战争"
+  "preset_color_schemes/nba/name": "【dark】NBA"
+  "preset_color_schemes/ps4/name": "【dark】PS4"
+  "preset_color_schemes/skype/name": "【dark】Skype"
+  "preset_color_schemes/smurfs/name": "【dark】蓝精灵／Smurfs"
+  "preset_color_schemes/so_young/name": "【light】致青春／So Young"
+  "preset_color_schemes/so_young/dark_scheme": "starcraft"
+  "preset_color_schemes/solarized_rock/name": "【dark】Solarized Rock"
+  "preset_color_schemes/starcraft/name": "【dark】星际我争霸"
+  "preset_color_schemes/starcraft_ii/name": "【dark】星际争霸Ⅱ"
+  "preset_color_schemes/steam/name": "【dark】Steam"
+  "preset_color_schemes/tantsing/name": "【light】丹青"
+  "preset_color_schemes/tintin/name": "【dark】丁丁／ Tintin"
+  "preset_color_schemes/wii/name": "【light】Wii"
+  "preset_color_schemes/xbox_silver/name": "【light】Xbox Silver"
+  "preset_color_schemes/youtube/name": "【light】YouTube"
+  "preset_color_schemes/yygc/name": "【light】一叶孤城"
+  "preset_color_schemes/feng01/name": "【light】奈々"
+  "preset_color_schemes/feng02/name": "【light】独立日"
+  "preset_color_schemes/feng03/name": "【light】一叶清荷"
+  "preset_color_schemes/feng04/name": "【light】往事回忆"
+  "preset_color_schemes/feng05/name": "黄黑"
+  "preset_color_schemes/feng06/name": "【light】花香流转"
+  "preset_color_schemes/feng07/name": "【light】巴黎遗梦"
+  "preset_color_schemes/hong/name": "【dark】黑橙／hong"
+  "preset_color_schemes/yushe/name": "【light】预设／default"
